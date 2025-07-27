@@ -650,5 +650,5 @@ function App() {
   );
 };
 
-export default FindSOSApp;
+export default App;
 
