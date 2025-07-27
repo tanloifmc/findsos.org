@@ -21,6 +21,8 @@ import PayPalDonation from './components/PayPalDonation.jsx';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs.jsx';
 import './App.css';
 import './i18n.js';
+import { Label } from "@/components/ui/label";
+
 
 function App() {
   const { t, i18n } = useTranslation();

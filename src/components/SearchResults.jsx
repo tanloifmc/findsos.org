@@ -12,6 +12,8 @@ import { Label } from '@/components/ui/label.jsx';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select.jsx';
 import { Badge } from '@/components/ui/badge.jsx';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs.jsx';
+import { Label } from "@/components/ui/label";
+
 
 const SearchResults = ({ onBack, searchType = 'all' }) => {
   const { t } = useTranslation();
