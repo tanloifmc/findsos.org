@@ -11,7 +11,7 @@ import { Label } from '@/components/ui/label.jsx';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select.jsx';
 import { Textarea } from '@/components/ui/textarea.jsx';
 import { Badge } from '@/components/ui/badge.jsx';
-import { Label } from "@/components/ui/label";
+
 
 
 const FoundPetForm = ({ onBack, onSubmit }) => {
