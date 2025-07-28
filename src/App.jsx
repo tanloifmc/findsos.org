@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { 
-  Globe, Users, AlertTriangle, Search, Home, MapPin, 
+  Globe, Users, Clock, AlertTriangle, Languages, Search, Home, MapPin, 
   Phone, Facebook, Mail, ChevronDown, Menu, X,
   AlertCircle, PawPrint, Heart, HelpCircle
 } from 'lucide-react';
@@ -22,6 +22,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs.j
 import './App.css';
 import './i18n.js';
 import { Label } from "@/components/ui/label";
+
 
 
 function App() {
@@ -109,7 +110,7 @@ function App() {
                       : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
                   }`}
                 >
-                  <Map className="w-4 h-4 mr-2" />
+                  <MapPin className="w-4 h-4 mr-2" />
                   {t('emergencyMap')}
                 </button>
                 <button
@@ -200,7 +201,7 @@ function App() {
                     : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
                 }`}
               >
-                <Map className="w-5 h-5 mr-3" />
+                <MapPin className="w-5 h-5 mr-3" />
                 {t('emergencyMap')}
               </button>
               <button
