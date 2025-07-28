@@ -260,42 +260,39 @@ function App() {
       <div className="min-h-screen bg-gradient-to-br from-red-50 via-orange-50 to-yellow-50">
         <AdSenseSetup />
         <NavigationBar />
-        
         {/* Header Banner Ad */}
-        <div className="container mx-auto px-4 pt-4">
-          <HeaderBannerAd className="mb-4" />
+        <div className="container mx-auto px-2 sm:px-4 pt-4">
+          <HeaderBannerAd className="mb-6 rounded-xl shadow" />
         </div>
-        
-        <div className="container mx-auto px-4 py-8 pb-24 md:pb-8">
+        <div className="container mx-auto px-2 sm:px-4 py-6 pb-28 md:pb-10">
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
             {/* Main Content */}
             <div className="lg:col-span-3">
               <div className="text-center mb-12">
-                <h1 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-red-600 to-orange-600 bg-clip-text text-transparent">
+                <h1 className="text-5xl md:text-6xl font-extrabold mb-4 bg-gradient-to-r from-red-600 to-orange-600 bg-clip-text text-transparent drop-shadow-lg">
                   🆘 {t('appTitle')}
-              </h1>
-              <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                {t('appSubtitle')}
-              </p>
+                </h1>
+                <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                  {t('appSubtitle')}
+                </p>
+              </div>
+              <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground mb-8">
+                <div className="flex items-center bg-white/70 px-5 py-2 rounded-full shadow-sm border border-gray-200">
+                  <Globe className="w-4 h-4 mr-2" />
+                  {t('globalScope')}
+                </div>
+                <div className="flex items-center bg-white/70 px-5 py-2 rounded-full shadow-sm border border-gray-200">
+                  <Users className="w-4 h-4 mr-2" />
+                  {t('communitySupport')}
+                </div>
+                <div className="flex items-center bg-white/70 px-5 py-2 rounded-full shadow-sm border border-gray-200">
+                  <AlertTriangle className="w-4 h-4 mr-2" />
+                  {t('emergencyAlert')}
+                </div>
+              </div>
             </div>
-            
-            <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
-              <div className="flex items-center bg-white/50 px-4 py-2 rounded-full">
-                <Globe className="w-4 h-4 mr-2" />
-                {t('globalScope')}
-              </div>
-              <div className="flex items-center bg-white/50 px-4 py-2 rounded-full">
-                <Users className="w-4 h-4 mr-2" />
-                {t('communitySupport')}
-              </div>
-              <div className="flex items-center bg-white/50 px-4 py-2 rounded-full">
-                <AlertTriangle className="w-4 h-4 mr-2" />
-                {t('emergencyAlert')}
-              </div>
-            </div>
-          </div>
 
-          <Card className="mb-8 hover:shadow-lg transition-shadow">
+          <Card className="mb-8 hover:shadow-xl transition-shadow rounded-2xl border-2 border-blue-100">
             <CardHeader>
               <CardTitle className="flex items-center">
                 <Globe className="w-5 h-5 mr-2" />
@@ -335,9 +332,9 @@ function App() {
           </Card>
 
           {/* Priority Order: SOS, People, Pets */}
-          <div className="space-y-8">
+          <div className="space-y-10">
             {/* SOS Emergency - Highest Priority */}
-            <Card className="border-red-200 bg-red-50/50 hover:shadow-xl transition-all duration-300">
+            <Card className="border-red-300 bg-red-50/80 hover:shadow-2xl transition-all duration-300 rounded-2xl">
               <CardHeader>
                 <CardTitle className="text-red-700 text-2xl flex items-center">
                   <AlertTriangle className="w-8 h-8 mr-3" />
@@ -346,7 +343,7 @@ function App() {
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => setCurrentView('sos')}>
+                  <Card className="hover:shadow-xl transition-shadow cursor-pointer rounded-xl border border-red-200" onClick={() => setCurrentView('sos')}>
                     <CardContent className="p-6 text-center">
                       <div className="text-6xl mb-4">🆘</div>
                       <h3 className="text-xl font-semibold mb-2 text-red-700">{t('sosTitle')}</h3>
@@ -363,7 +360,7 @@ function App() {
                     </CardContent>
                   </Card>
 
-                  <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => setCurrentView('emergency-map')}>
+                  <Card className="hover:shadow-xl transition-shadow cursor-pointer rounded-xl border border-orange-200" onClick={() => setCurrentView('emergency-map')}>
                     <CardContent className="p-6 text-center">
                       <div className="text-6xl mb-4">⚠️</div>
                       <h3 className="text-xl font-semibold mb-2 text-orange-700">{t('disasterAlertTitle')}</h3>
@@ -384,7 +381,7 @@ function App() {
             </Card>
 
             {/* Missing People - Second Priority */}
-            <Card className="border-purple-200 bg-purple-50/50 hover:shadow-xl transition-all duration-300">
+            <Card className="border-purple-300 bg-purple-50/80 hover:shadow-2xl transition-all duration-300 rounded-2xl">
               <CardHeader>
                 <CardTitle className="text-purple-700 text-2xl flex items-center">
                   <Users className="w-8 h-8 mr-3" />
@@ -393,7 +390,7 @@ function App() {
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => setCurrentView('post-missing-person')}>
+                  <Card className="hover:shadow-xl transition-shadow cursor-pointer rounded-xl border border-purple-200" onClick={() => setCurrentView('post-missing-person')}>
                     <CardContent className="p-6 text-center">
                       <div className="text-6xl mb-4">👥</div>
                       <h3 className="text-xl font-semibold mb-2 text-purple-700">{t('missingPersonTitle')}</h3>
@@ -410,7 +407,7 @@ function App() {
                     </CardContent>
                   </Card>
 
-                  <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => setCurrentView('post-found-person')}>
+                  <Card className="hover:shadow-xl transition-shadow cursor-pointer rounded-xl border border-indigo-200" onClick={() => setCurrentView('post-found-person')}>
                     <CardContent className="p-6 text-center">
                       <div className="text-6xl mb-4">🤝</div>
                       <h3 className="text-xl font-semibold mb-2 text-indigo-700">{t('foundPersonTitle')}</h3>
@@ -431,7 +428,7 @@ function App() {
             </Card>
 
             {/* Missing Pets - Third Priority */}
-            <Card className="border-green-200 bg-green-50/50 hover:shadow-xl transition-all duration-300">
+            <Card className="border-green-300 bg-green-50/80 hover:shadow-2xl transition-all duration-300 rounded-2xl">
               <CardHeader>
                 <CardTitle className="text-green-700 text-2xl flex items-center">
                   <PawPrint className="w-8 h-8 mr-3" />
@@ -440,7 +437,7 @@ function App() {
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => setShowMissingPetForm(true)}>
+                  <Card className="hover:shadow-xl transition-shadow cursor-pointer rounded-xl border border-blue-200" onClick={() => setShowMissingPetForm(true)}>
                     <CardContent className="p-6 text-center">
                       <div className="text-6xl mb-4">🔍</div>
                       <h3 className="text-xl font-semibold mb-2 text-blue-700">{t('missingPetTitle')}</h3>
@@ -457,7 +454,7 @@ function App() {
                     </CardContent>
                   </Card>
 
-                  <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => setShowFoundPetForm(true)}>
+                  <Card className="hover:shadow-xl transition-shadow cursor-pointer rounded-xl border border-green-200" onClick={() => setShowFoundPetForm(true)}>
                     <CardContent className="p-6 text-center">
                       <div className="text-6xl mb-4">🏠</div>
                       <h3 className="text-xl font-semibold mb-2 text-green-700">{t('foundPetTitle')}</h3>
@@ -478,11 +475,11 @@ function App() {
             </Card>
             
             {/* In-Content Ad */}
-            <div className="my-8">
+            <div className="my-10">
               <InContentAd />
             </div>
 
-            <Card className="mt-8 hover:shadow-lg transition-shadow">
+            <Card className="mt-8 hover:shadow-xl transition-shadow rounded-2xl border-2 border-gray-100">
               <CardHeader>
                 <CardTitle className="flex items-center">
                   <Clock className="w-5 h-5 mr-2" />
@@ -502,7 +499,7 @@ function App() {
             </div>
 
             {/* Sidebar with Ads */}
-            <div className="lg:col-span-1 space-y-6">
+            <div className="lg:col-span-1 space-y-8">
               {/* Sidebar Ad */}
               <div className="sticky top-4">
                 <SidebarAd />
@@ -512,11 +509,11 @@ function App() {
               <PayPalDonation compact={true} />
               
               {/* Quick Stats */}
-              <Card>
+              <Card className="rounded-xl border border-gray-200 shadow-sm">
                 <CardHeader>
-                  <CardTitle className="text-lg">{t('quickStats')}</CardTitle>
+                  <CardTitle className="text-lg font-semibold">{t('quickStats')}</CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-3">
+                <CardContent className="space-y-4">
                   <div className="flex justify-between items-center">
                     <span className="text-sm text-muted-foreground">{t('activeCases')}</span>
                     <Badge variant="secondary">1,234</Badge>
@@ -538,13 +535,13 @@ function App() {
           </div>
           
           {/* Footer Banner Ad */}
-          <div className="mt-12">
+          <div className="mt-14">
             <FooterBannerAd />
           </div>
         </div>
         
         {/* Mobile Sticky Banner Ad */}
-        <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-white border-t shadow-lg">
+        <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-white border-t shadow-lg rounded-t-xl">
           <MobileBannerAd />
         </div>
       </div>
